@@ -1,0 +1,9 @@
+{
+    "name": "mwhite/random-uagent",
+    "description": "A library for generating random User Agents",
+    "keywords": ["user-agent", "scraping"],
+
+    "autoload": {
+        "files": ["uagent.php"]
+    }
+}

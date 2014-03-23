@@ -1,0 +1,12 @@
+{
+  "name" : "metasploit-pro-trial-grabber",
+  "require" : {
+    "php-curl-class/php-curl-class" : "1.0.1",
+    "shark/simple_html_dom" : "dev-master",
+    "mwhite/random-uagent" : "dev-master"
+  },
+  "repositories" : [ {
+    "type" : "composer",
+    "url" : "https://packagist.org/"
+  } ]
+}

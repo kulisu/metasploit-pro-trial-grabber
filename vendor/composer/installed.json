@@ -1,0 +1,103 @@
+[
+    {
+        "name": "php-curl-class/php-curl-class",
+        "version": "1.0.1",
+        "version_normalized": "1.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/php-curl-class/php-curl-class.git",
+            "reference": "66c8908e0f5de3a812a240ae9cd20dbc728c1a15"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/php-curl-class/php-curl-class/zipball/66c8908e0f5de3a812a240ae9cd20dbc728c1a15",
+            "reference": "66c8908e0f5de3a812a240ae9cd20dbc728c1a15",
+            "shasum": ""
+        },
+        "time": "2014-03-02 09:59:56",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "lib/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "description": "PHP Curl Class is an object-oriented wrapper of the PHP cURL extension."
+    },
+    {
+        "name": "shark/simple_html_dom",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/samacs/simple_html_dom.git",
+            "reference": "a7dfed08a6e8d18dc88bc5c73d344f3a6b2316d9"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/samacs/simple_html_dom/zipball/a7dfed08a6e8d18dc88bc5c73d344f3a6b2316d9",
+            "reference": "a7dfed08a6e8d18dc88bc5c73d344f3a6b2316d9",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.2.4"
+        },
+        "time": "2012-09-23 01:24:27",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "classmap": [
+                "simple_html_dom.php"
+            ],
+            "files": [
+                "simple_html_dom.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "authors": [
+            {
+                "name": "S.C. Chen",
+                "email": "me578022@gmail.com",
+                "homepage": "http://simplehtmldom.sourceforge.net/",
+                "role": "Lead Developer"
+            }
+        ],
+        "description": "Simple HTML DOM package.",
+        "homepage": "http://simplehtmldom.sourceforge.net/",
+        "keywords": [
+            "dom",
+            "php dom"
+        ]
+    },
+    {
+        "name": "mwhite/random-uagent",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/mwhite/random-uagent.git",
+            "reference": "ac4c3963c69c1d7cfd7a03adcdd82172dc22b307"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/mwhite/random-uagent/zipball/ac4c3963c69c1d7cfd7a03adcdd82172dc22b307",
+            "reference": "ac4c3963c69c1d7cfd7a03adcdd82172dc22b307",
+            "shasum": ""
+        },
+        "time": "2014-02-19 07:55:02",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "files": [
+                "uagent.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "description": "A library for generating random User Agents",
+        "keywords": [
+            "scraping",
+            "user-agent"
+        ]
+    }
+]

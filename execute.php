@@ -156,7 +156,7 @@
 
   /**
    * @author Chris Lin <Chris#skiddie.me>
-   * @version 2014-03-22
+   * @version 2014-03-29
    */
   class Fakemailgenerator extends Disposable {
     public function __construct() {
@@ -188,7 +188,7 @@
   	 * @param string $email a mail address parsed from fakemailgenerator to receive the trial license
   	 * @param int $delay waiting for %d seconds to get again if the trial info has not delivered
   	 * @return string the metasploit pro trial product key for 7-days
-  	 * @version 2014-03-15
+  	 * @version 2014-03-29
   	 */
     public function get_trial_license( $email, $delay = 45 ) {
       $address = explode( '@', $email );
@@ -237,7 +237,8 @@
             return;
           }
         } while ( empty( $license ) );
-      echo PHP_EOL, "  [-] ALL DONE !", PHP_EOL, PHP_EOL;
+      echo PHP_EOL, "  [-] ALL DONE !", PHP_EOL;
+      echo "[+] ALL DONE !", PHP_EOL, PHP_EOL;
       # End
 
       # return the 7-DAYS pro serial we want, DONE !
@@ -353,7 +354,7 @@
 
   /**
    * @author Chris Lin <Chris#skiddie.me>
-   * @version 2014-03-22
+   * @version 2014-03-29
    */
   class Spambog extends Disposable {
     public function __construct() {
@@ -385,7 +386,7 @@
   	 * @param string $email a mail address parsed from spambog to receive the trial license
   	 * @param int $delay waiting for %d seconds to get again if the trial info has not delivered
   	 * @return string the metasploit pro trial product key for 7-days
-  	 * @version 2014-03-22
+  	 * @version 2014-03-29
   	 */
     public function get_trial_license( $email, $delay = 45 ) {
       $inbox = sprintf( '%s/rss/%s', $this->service_url, $email );
@@ -414,7 +415,7 @@
                 # http://www.spambog.com/message-48975819-7a3bd25f97097ab7f4edff5ef58e2bc2-1394838000/upind1981@bund.us.htm
                 preg_match( '/\w{8}-\w{32}-\w{10}/', $content, $url );
                 # cookies of sid: 6e4mapj8tp7oc80j49vnb64oe7
-                preg_match( '/\w{26}/', $this->curl_object->response_headers[8], $cookies );
+                preg_match( '/\w{26}/', $this->curl_object->response_headers['Set-Cookie'], $cookies );
 
                 $this->curl_object->setCookie( 'sid', $cookies[0] );
                 # http://www.spambog.com/getHTMLVersion-48975819-7a3bd25f97097ab7f4edff5ef58e2bc2-1394838000.htm
@@ -430,7 +431,8 @@
           	return;
           }
         } while ( empty( $license ) );
-      echo PHP_EOL, "  [-] ALL DONE !", PHP_EOL, PHP_EOL;
+      echo PHP_EOL, "  [-] ALL DONE !", PHP_EOL;
+      echo "[+] ALL DONE !", PHP_EOL, PHP_EOL;
       # End
 
       # return the 7-DAYS pro serial we want, DONE !
@@ -441,7 +443,7 @@
 
   /**
    * @author Chris Lin <Chris#skiddie.me>
-   * @version 2014-03-22
+   * @version 2014-03-29
    */
   class Yopmail extends Disposable {
     public function __construct() {
@@ -473,7 +475,7 @@
   	 * @param string $email a mail address parsed from spambog to receive the trial license
   	 * @param int $delay waiting for %d seconds to get again if the trial info has not delivered
   	 * @return string the metasploit pro trial product key for 7-days
-  	 * @version 2014-03-22
+  	 * @version 2014-03-29
   	 */
     public function get_trial_license( $email, $delay = 45 ) {
       $address = explode( '@', $email );
@@ -516,7 +518,8 @@
           	return;
           }
         } while ( empty( $license ) );
-      echo PHP_EOL, "  [-] ALL DONE !", PHP_EOL, PHP_EOL;
+      echo PHP_EOL, "  [-] ALL DONE !", PHP_EOL;
+      echo "[+] ALL DONE !", PHP_EOL, PHP_EOL;
       # End
 
       # return the 7-DAYS pro serial we want, DONE !

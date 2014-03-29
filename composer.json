@@ -3,7 +3,7 @@
   "description" : "This is a PHP command-line script to auto-grab the metasploit 7-DAYs pro trial key.",
   "require" : {
     "php" : ">=5.3.2",
-    "php-curl-class/php-curl-class" : "1.0.1",
+    "php-curl-class/php-curl-class" : "dev-master",
     "shark/simple_html_dom" : "dev-master",
     "mwhite/random-uagent" : "dev-master"
   },
@@ -17,7 +17,6 @@
     "homepage" : "http://www.skiddie.me",
     "role" : "Developer"
   } ],
-  "keywords" : [ "grabber", "metasploit", "trial", "key" ],
   "license" : "GPL-2.0",
   "type" : "project",
   "homepage" : "https://github.com/skiddie/metasploit-pro-trial-grabber"

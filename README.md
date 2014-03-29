@@ -31,8 +31,8 @@ if you like this script, buy me a coffee ?
 ```sh
 # clone the script by using git directly.
 root@kali-linux:~# git clone https://github.com/skiddie/metasploit-pro-trial-grabber.git
-# no git installed ? you can use wget instead :)
-root@kali-linux:~# wget https://github.com/skiddie/metasploit-pro-trial-grabber/archive/master.zip
+# install the project dependencies
+root@kali-linux:~# cd metasploit-pro-trial-grabber && php composer.phar install
 
 # OPTIONAL: execute the command below if you get the exception message 'cURL library is not loaded'.
 root@kali-linux:~# apt-get install php5-curl
@@ -47,23 +47,34 @@ root@kali-linux:~# php execute.php
 
 ### Output
 
+    [+] defining the pre-required constants .. DONE !
     [+] loading the 3rd-party libraries .. DONE !
     [+] creating all classes' instance .. DONE !
-    [+] checking all mail domains are valid or not .. 
+    [+] checking all mail domains from provider: Spambog are valid or not ..
       [-] parsing all the available domains from response .. DONE !
-        [*] parsing the name info from response .. DONE !
+        [*] parsing the profile fields from response .. DONE !
         [*] parsing the additional info from response .. DONE !
       [-] extracting from all the available domains .. 
-        [*] checking the mail address: stagazen@armyspy.com is valid or not .. ILLEGAL !
-        [*] checking the mail address: stagazen@cuvox.de is valid or not .. ILLEGAL !
-        [*] checking the mail address: stagazen@dayrep.com is valid or not .. ILLEGAL !
-        [*] checking the mail address: stagazen@einrot.com is valid or not .. VALID !
-        [*] checking the mail address: stagazen@fleckens.hu is valid or not .. VALID !
-        [*] checking the mail address: stagazen@gustr.com is valid or not .. VALID !
-        [*] checking the mail address: stagazen@jourrapide.com is valid or not .. ILLEGAL !
-        [*] checking the mail address: stagazen@rhyta.com is valid or not .. ILLEGAL !
-        [*] checking the mail address: stagazen@superrito.com is valid or not .. ILLEGAL !
-        [*] checking the mail address: stagazen@teleworm.us is valid or not .. ILLEGAL !
+        [*] checking the mail address: habing@spambog.com is valid or not .. ILLEGAL
+        [*] checking the mail address: habing@spambog.de is valid or not .. ILLEGAL
+        [*] checking the mail address: habing@discardmail.com is valid or not .. ILLEGAL
+        [*] checking the mail address: habing@discardmail.de is valid or not .. ILLEGAL
+        [*] checking the mail address: habing@spambog.ru is valid or not .. ILLEGAL
+        [*] checking the mail address: habing@0815.ru is valid or not .. ILLEGAL
+        [*] checking the mail address: habing@s0ny.net is valid or not .. ILLEGAL
+        [*] checking the mail address: habing@hulapla.de is valid or not .. ILLEGAL
+        [*] checking the mail address: habing@bund.us is valid or not .. VALID !
+        [*] checking the mail address: habing@teewars.org is valid or not .. ILLEGAL
+        [*] checking the mail address: habing@brennendesreich.de is valid or not .. VALID !
+        [*] checking the mail address: habing@ama-trans.de is valid or not .. ILLEGAL
+        [*] checking the mail address: habing@ama-trade.de is valid or not .. ILLEGAL
+        [*] checking the mail address: habing@malahov.de is valid or not .. ILLEGAL
+        [*] checking the mail address: habing@e-postkasten.eu is valid or not .. VALID !
+        [*] checking the mail address: habing@lags.us is valid or not .. VALID !
+        [*] checking the mail address: habing@6ip.us is valid or not .. VALID !
+        [*] checking the mail address: habing@e-postkasten.info is valid or not .. VALID !
+        [*] checking the mail address: habing@e-postkasten.de is valid or not .. VALID !
+        [*] checking the mail address: habing@e-postkasten.com is valid or not .. VALID !
       [-] ALL DONE !
     [+] ALL DONE !
     [+] choosing a valid domain and generating an email address .. DONE !
@@ -73,25 +84,43 @@ root@kali-linux:~# php execute.php
     [+] submitting the trial request to metasploit ..
       [-] parsing the hidden filds' value from response ..
         [*] field: custparamleadsource has value: 443597
+        [*] field: submitted has value: 
         [*] field: custparamreturnpath has value: https://localhost:3790/setup/activation
+        [*] field: custparamproduct_key has value: 
         [*] field: custparamproductaxscode has value: msY5CIoVGr
+        [*] field: custparamthisIP has value: 103.245.222.133
       [-] ALL DONE !
-    [+] preparing the registration payload .. DONE !
-    [+] configuring the CURL options .. DONE !
-    [+] sending the registration data to online form .. DONE !
+      [-] preparing the registration payload .. DONE !
+      [-] sending the registration data to online form .. DONE !
     [+] ALL DONE !
     [+] looping to retrieve the trial mail content ..
       [-] checking the trial confirmation mail has delivered to inbox or not ..
-        [*] waiting for trial mail delivered to inbox: http://www.fakemailgenerator.com/inbox/einrot.com/stagazen/ ..
-        [*] waiting for trial mail delivered to inbox: http://www.fakemailgenerator.com/inbox/einrot.com/stagazen/ ..
-        [*] waiting for trial mail delivered to inbox: http://www.fakemailgenerator.com/inbox/einrot.com/stagazen/ ..
-        [*] waiting for trial mail delivered to inbox: http://www.fakemailgenerator.com/inbox/einrot.com/stagazen/ ..
-        [*] waiting for trial mail delivered to inbox: http://www.fakemailgenerator.com/inbox/einrot.com/stagazen/ ..
+        [*] waiting for trial mail delivered to inbox: http://www.spambog.com/rss/habing@brennendesreich.de ..
+        [*] waiting for trial mail delivered to inbox: http://www.spambog.com/rss/habing@brennendesreich.de ..
+        [*] waiting for trial mail delivered to inbox: http://www.spambog.com/rss/habing@brennendesreich.de ..
+        [*] waiting for trial mail delivered to inbox: http://www.spambog.com/rss/habing@brennendesreich.de ..
+        [*] waiting for trial mail delivered to inbox: http://www.spambog.com/rss/habing@brennendesreich.de ..
+        [*] waiting for trial mail delivered to inbox: http://www.spambog.com/rss/habing@brennendesreich.de ..
+        [*] waiting for trial mail delivered to inbox: http://www.spambog.com/rss/habing@brennendesreich.de ..
+        [*] waiting for trial mail delivered to inbox: http://www.spambog.com/rss/habing@brennendesreich.de ..
+        [*] waiting for trial mail delivered to inbox: http://www.spambog.com/rss/habing@brennendesreich.de ..
+        [*] waiting for trial mail delivered to inbox: http://www.spambog.com/rss/habing@brennendesreich.de ..
+        [*] waiting for trial mail delivered to inbox: http://www.spambog.com/rss/habing@brennendesreich.de ..
+        [*] waiting for trial mail delivered to inbox: http://www.spambog.com/rss/habing@brennendesreich.de ..
+        [*] waiting for trial mail delivered to inbox: http://www.spambog.com/rss/habing@brennendesreich.de ..
+        [*] waiting for trial mail delivered to inbox: http://www.spambog.com/rss/habing@brennendesreich.de ..
+        [*] waiting for trial mail delivered to inbox: http://www.spambog.com/rss/habing@brennendesreich.de ..
+        [*] waiting for trial mail delivered to inbox: http://www.spambog.com/rss/habing@brennendesreich.de ..
+        [*] waiting for trial mail delivered to inbox: http://www.spambog.com/rss/habing@brennendesreich.de ..
+        [*] waiting for trial mail delivered to inbox: http://www.spambog.com/rss/habing@brennendesreich.de ..
+        [*] waiting for trial mail delivered to inbox: http://www.spambog.com/rss/habing@brennendesreich.de ..
+        [*] waiting for trial mail delivered to inbox: http://www.spambog.com/rss/habing@brennendesreich.de ..
         [*] BINGO ! the mail just delivered, parsing it .. DONE !
       [-] ALL DONE !
+    [+] ALL DONE !
 
-    Your 7-days pro trial key: CC97-GP66-X8TT-2K19
-    
+    Your 7-days pro trial key: CRDJ-09P8-EG4K-EQS4
+
 ![Output](http://i.imgur.com/e1yv2Pz.png)
 
 ### Credits:

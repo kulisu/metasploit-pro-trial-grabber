@@ -6,7 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Curl' => $vendorDir . '/php-curl-class/php-curl-class/lib/Curl.class.php',
+    'CaseInsensitiveArray' => $vendorDir . '/php-curl-class/php-curl-class/src/Curl.class.php',
+    'Curl' => $vendorDir . '/php-curl-class/php-curl-class/src/Curl.class.php',
     'simple_html_dom' => $vendorDir . '/shark/simple_html_dom/simple_html_dom.php',
     'simple_html_dom_node' => $vendorDir . '/shark/simple_html_dom/simple_html_dom.php',
 );

@@ -1,25 +1,25 @@
 [
     {
         "name": "php-curl-class/php-curl-class",
-        "version": "1.0.1",
-        "version_normalized": "1.0.1.0",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
         "source": {
             "type": "git",
             "url": "https://github.com/php-curl-class/php-curl-class.git",
-            "reference": "66c8908e0f5de3a812a240ae9cd20dbc728c1a15"
+            "reference": "93350fe3a9e33cc79d4db5ab38a36674f398f468"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/php-curl-class/php-curl-class/zipball/66c8908e0f5de3a812a240ae9cd20dbc728c1a15",
-            "reference": "66c8908e0f5de3a812a240ae9cd20dbc728c1a15",
+            "url": "https://api.github.com/repos/php-curl-class/php-curl-class/zipball/93350fe3a9e33cc79d4db5ab38a36674f398f468",
+            "reference": "93350fe3a9e33cc79d4db5ab38a36674f398f468",
             "shasum": ""
         },
-        "time": "2014-03-02 09:59:56",
+        "time": "2014-03-29 09:24:04",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
             "classmap": [
-                "lib/"
+                "src/"
             ]
         },
         "notification-url": "https://packagist.org/downloads/",
@@ -45,7 +45,7 @@
         },
         "time": "2012-09-23 01:24:27",
         "type": "library",
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "classmap": [
                 "simple_html_dom.php"
@@ -87,7 +87,7 @@
         },
         "time": "2014-02-19 07:55:02",
         "type": "library",
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "files": [
                 "uagent.php"

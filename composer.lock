@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "91255c0088699af5f0fb6abd1eacceea",
+    "hash": "567b10516a33fd17f7a6c75817826510",
     "packages": [
         {
             "name": "mwhite/random-uagent",
@@ -35,27 +35,27 @@
         },
         {
             "name": "php-curl-class/php-curl-class",
-            "version": "1.0.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-curl-class/php-curl-class.git",
-                "reference": "66c8908e0f5de3a812a240ae9cd20dbc728c1a15"
+                "reference": "93350fe3a9e33cc79d4db5ab38a36674f398f468"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-curl-class/php-curl-class/zipball/66c8908e0f5de3a812a240ae9cd20dbc728c1a15",
-                "reference": "66c8908e0f5de3a812a240ae9cd20dbc728c1a15",
+                "url": "https://api.github.com/repos/php-curl-class/php-curl-class/zipball/93350fe3a9e33cc79d4db5ab38a36674f398f468",
+                "reference": "93350fe3a9e33cc79d4db5ab38a36674f398f468",
                 "shasum": ""
             },
             "type": "library",
             "autoload": {
                 "classmap": [
-                    "lib/"
+                    "src/"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "description": "PHP Curl Class is an object-oriented wrapper of the PHP cURL extension.",
-            "time": "2014-03-02 09:59:56"
+            "time": "2014-03-29 09:24:04"
         },
         {
             "name": "shark/simple_html_dom",
@@ -109,12 +109,13 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
+        "php-curl-class/php-curl-class": 20,
         "shark/simple_html_dom": 20,
         "mwhite/random-uagent": 20
     },
-    "platform": [
-
-    ],
+    "platform": {
+        "php": ">=5.2.4"
+    },
     "platform-dev": [
 
     ]

@@ -3,7 +3,7 @@
   "description" : "This is a PHP command-line script to auto-grab the metasploit 7-DAYs pro trial key.",
   "require" : {
     "php" : ">=5.3.2",
-    "php-curl-class/php-curl-class" : "dev-master",
+    "php-curl-class/php-curl-class" : "1.0.1",
     "shark/simple_html_dom" : "dev-master",
     "mwhite/random-uagent" : "dev-master"
   },

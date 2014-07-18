@@ -10,14 +10,14 @@
    * 
    * @author Chris Lin <Chris#skiddie.me>
    * @link https://github.com/skiddie/metasploit-pro-trial-grabber
-   * @version 2014-03-22
+   * @version 2014-07-18
    */
 
   # Start: defining the pre-required constants
   echo "[+] defining the pre-required constants .. ";
     define( 'REQUEST_DELAY', 15 );
     define( 'REQUEST_RETRY', 30 );
-    define( 'PROVIDER_LIST', serialize( array( 'Fakemailgenerator' => TRUE, 'Guerrillamail' => FALSE, 'Spambog' => TRUE, 'Yopmail' => TRUE ) ) );
+    define( 'PROVIDER_LIST', serialize( array( 'Fakemailgenerator' => FALSE, 'Guerrillamail' => FALSE, 'Spambog' => TRUE, 'Yopmail' => TRUE ) ) );
   echo "DONE !", PHP_EOL;
   # End
 
@@ -415,7 +415,7 @@
                 # http://www.spambog.com/message-48975819-7a3bd25f97097ab7f4edff5ef58e2bc2-1394838000/upind1981@bund.us.htm
                 preg_match( '/\w{8}-\w{32}-\w{10}/', $content, $url );
                 # cookies of sid: 6e4mapj8tp7oc80j49vnb64oe7
-                preg_match( '/\w{26}/', $this->curl_object->response_headers['Set-Cookie'], $cookies );
+                preg_match( '/\w{26}/', implode('|', $this->curl_object->response_headers), $cookies );
 
                 $this->curl_object->setCookie( 'sid', $cookies[0] );
                 # http://www.spambog.com/getHTMLVersion-48975819-7a3bd25f97097ab7f4edff5ef58e2bc2-1394838000.htm

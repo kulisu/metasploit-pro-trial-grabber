@@ -15,6 +15,8 @@
 
   # Start: defining the pre-required constants
   echo "[+] defining the pre-required constants .. ";
+    # if you got a `SSL certificate problem: unable to get local issuer certificate` error, please set `ENABLE_VERIFY` to FALSE to disable SSL verification.
+    define( 'ENABLE_VERIFY', FALSE );
     define( 'REQUEST_DELAY', 15 );
     define( 'REQUEST_RETRY', 30 );
     define( 'PROVIDER_LIST', serialize( array( 'Fakemailgenerator' => FALSE, 'Guerrillamail' => FALSE, 'Spambog' => TRUE, 'Yopmail' => TRUE ) ) );
@@ -108,6 +110,8 @@
        	echo '[?] error message: ', $instance->error_message, PHP_EOL;
        	die();
       });
+      
+      $this->curl_object->setOpt(CURLOPT_SSL_VERIFYPEER, ENABLE_VERIFY);
     }
 
     protected function __destruct() {

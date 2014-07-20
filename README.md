@@ -22,11 +22,20 @@ if you like this script, buy me a coffee ?
 
 ### Environment
 
-* [PHP]: 5.4.4-14+deb7u7
-* [cURL]: 7.26.0
-* [Kali Linux]: 1.0.6 x86
+* Linux:
+
+    * [PHP]: 5.4.4-14+deb7u7
+    * [cURL]: 7.26.0
+    * [Kali Linux]: 1.0.6 x86
+
+* Windows
+
+    * [XAMPP] 1.8.2
+    * [Windows] XP Professional Service Pack 3 x86
 
 ### Installation
+
+* Linux:
 
 ```sh
 # clone the script by using git directly.
@@ -38,11 +47,26 @@ root@kali-linux:~# cd metasploit-pro-trial-grabber && php composer.phar install
 root@kali-linux:~# apt-get install php5-curl
 ```
 
+* Windows
+
+```batch
+# download the script and unzip it by yourself, path `C:\` for example.
+C:\Documents and Settings\Chris>cd C:\metasploit-pro-trial-grabber-master && C:\xampp\php\php.exe composer.phar install
+```
+
 ### Execution
+
+* Linux:
 
 ```sh
 # the environment mentioned above is tested by author and work functionally.
 root@kali-linux:~# php execute.php
+```
+
+* Windows
+
+```batch
+C:\metasploit-pro-trial-grabber-master>C:\xampp\php\php.exe execute.php
 ```
 
 ### Output
@@ -139,3 +163,4 @@ root@kali-linux:~# php execute.php
 [PHP Simple HTML DOM Parser]:http://simplehtmldom.sourceforge.net
 [Random USERAGENT in CuRL and PHP]:http://www.danmorgan.net/programming/php-programming/random-useragent-in-curl-and-php
 [Kali Linux]:http://www.kali.org/downloads
+[XAMPP]:http://downloads.sourceforge.net/project/xampp/XAMPP%20Windows/1.8.2/xampp-win32-1.8.2-5-VC9-installer.exe

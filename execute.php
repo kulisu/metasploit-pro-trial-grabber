@@ -10,7 +10,7 @@
    * 
    * @author Chris Lin <Chris#skiddie.me>
    * @link https://github.com/skiddie/metasploit-pro-trial-grabber
-   * @version 2014-07-18
+   * @version 2014-07-25
    */
 
   # Start: defining the pre-required constants
@@ -539,7 +539,7 @@
   class Metasploit extends Grabber {
     public function __construct() {
       parent::__construct();
-      $this->service_url = array( 'base_url' => 'https://forms.netsuite.com/app/site/hosting/scriptlet.nl', 'form_url' => 'https://www.rapid7.com/register/metasploit-trial.jsp?product' );
+      $this->service_url = array( 'base_url' => 'https://forms.netsuite.com/app/site/hosting/scriptlet.nl', 'form_url' => 'http://www.rapid7.com/products/metasploit/metasploit-pro-registration-corelan.jsp' );
     }
 
     public function __destruct() {
@@ -657,11 +657,11 @@
           'custparamuse'            => 'Personal',
           'custparamphone'          => $profile['phone'],
           'custparamemail'          => $profile['email'],
-          'custparamleadsource'     => ( empty( $hidden ) ) ? 443597 : $hidden['custparamleadsource'],
-          'submitted'               => ( empty( $hidden ) ) ? '' : $hidden['submitted'],
-          'custparamreturnpath'     => ( empty( $hidden ) ) ? 'https://localhost:3790/setup/activation' : $hidden['custparamreturnpath'],
-          'custparamproduct_key'    => ( empty( $hidden ) ) ? '' : $hidden['custparamproduct_key'],
-          'custparamproductaxscode' => ( empty( $hidden ) ) ? 'msY5CIoVGr' : $hidden['custparamproductaxscode'],
+          'custparamleadsource'     => ( empty( $hidden['custparamleadsource'] ) ) ? 443597 : $hidden['custparamleadsource'],
+          'submitted'               => ( empty( $hidden['submitted'] ) ) ? '' : $hidden['submitted'],
+          'custparamreturnpath'     => ( empty( $hidden['custparamreturnpath'] ) ) ? 'https://localhost:3790/setup/activation' : $hidden['custparamreturnpath'],
+          'custparamproduct_key'    => ( empty( $hidden['custparamproduct_key'] ) ) ? '' : $hidden['custparamproduct_key'],
+          'custparamproductaxscode' => ( empty( $hidden['custparamproductaxscode'] ) ) ? 'msY5CIoVGr' : $hidden['custparamproductaxscode'],
           'custparamthisIP'         => long2ip( rand( 0, 255 * 255 ) * rand( 0, 255 * 255 ) ),
           'formSubmit'              => 'Get Free Trial'
         );

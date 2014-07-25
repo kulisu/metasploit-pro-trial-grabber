@@ -1,6 +1,6 @@
 # Metasploit Pro Trial Grabber
 
-##### Updated: using the new form to get the 30-DAYS key, ENJOY it :)
+##### Updated: using the new form to get the **[30-DAYS key]**, ENJOY it :)
 
 ##### This is a PHP command-line script to auto-grab the Metasploit's **[7-DAYs pro trial key]**.
 
@@ -24,7 +24,7 @@ if you like this script, buy me a coffee ?
 
 ### Donators
 
-2014-07-23: Anonymous - [0.01615 BTC] (~300 TWD)
+2014-07-23: Anonymous - [0.01615 BTC](https://blockchain.info/tx/be809956bf74307cd60cfdc6adba6d026acc51816cceb6a9c297be4374a85eb0) (~ 300TWD)
 
 ### Environment
 
@@ -171,5 +171,4 @@ C:\metasploit-pro-trial-grabber-master>C:\xampp\php\php.exe execute.php
 [Random USERAGENT in CuRL and PHP]:http://www.danmorgan.net/programming/php-programming/random-useragent-in-curl-and-php
 [Kali Linux]:http://www.kali.org/downloads
 [XAMPP]:http://downloads.sourceforge.net/project/xampp/XAMPP%20Windows/1.8.2/xampp-win32-1.8.2-5-VC9-installer.exe
-
-[0.01615 BTC]:https://blockchain.info/tx/be809956bf74307cd60cfdc6adba6d026acc51816cceb6a9c297be4374a85eb0
+[30-DAYS key]:http://www.rapid7.com/products/metasploit/metasploit-pro-registration-corelan.jsp

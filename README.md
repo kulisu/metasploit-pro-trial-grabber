@@ -1,5 +1,7 @@
 # Metasploit Pro Trial Grabber
 
+##### Updated: using the new form to get the 30-DAYS key, ENJOY it :)
+
 ##### This is a PHP command-line script to auto-grab the Metasploit's **[7-DAYs pro trial key]**.
 
 Really tired to submit the trial request to Metasploit manually to get the pro key every weeks just because of its ~~[unfriendly price]~~ ?
@@ -16,17 +18,21 @@ All the register processes are in automation, so enjoy it now !
 
 if you like this script, buy me a coffee ?
 
-[![Alipay](https://img.alipay.com/sys/personalprod/style/mc/top-logo.png)](https://me.alipay.com/skiddie)
 [![Bitcoin](https://blockchain.info//Resources/buttons/donate_64.png)](http://goo.gl/f8ShlA)
 [![Paypal](https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif)](http://goo.gl/tRt4zN)
+![Alipay](https://i.imgur.com/MFwEQSp.png)
+
+### Donators
+
+2014-07-23: Anonymous - [0.01615 BTC] (~300 TWD)
 
 ### Environment
 
 * Linux:
 
-    * [PHP]: 5.4.4-14+deb7u7
+    * [PHP]: 5.4.4-14+deb7u12
     * [cURL]: 7.26.0
-    * [Kali Linux]: 1.0.6 x86
+    * [Kali Linux]: 1.0.8 x86
 
 * Windows
 
@@ -154,6 +160,7 @@ C:\metasploit-pro-trial-grabber-master>C:\xampp\php\php.exe execute.php
 * [Random USERAGENT in CuRL and PHP]
 
 [7-DAYs pro trial key]:https://www.rapid7.com/register/metasploit-trial.jsp?product
+[30-DAYs pro trial key]:http://www.rapid7.com/products/metasploit/metasploit-pro-registration-corelan.jsp
 [unfriendly price]:https://community.rapid7.com/docs/DOC-2287
 [Fake Name Generator]:http://www.fakenamegenerator.com
 [Fake Mail Generator]:http://www.fakemailgenerator.com
@@ -164,3 +171,5 @@ C:\metasploit-pro-trial-grabber-master>C:\xampp\php\php.exe execute.php
 [Random USERAGENT in CuRL and PHP]:http://www.danmorgan.net/programming/php-programming/random-useragent-in-curl-and-php
 [Kali Linux]:http://www.kali.org/downloads
 [XAMPP]:http://downloads.sourceforge.net/project/xampp/XAMPP%20Windows/1.8.2/xampp-win32-1.8.2-5-VC9-installer.exe
+
+[0.01615 BTC]:https://blockchain.info/tx/be809956bf74307cd60cfdc6adba6d026acc51816cceb6a9c297be4374a85eb0

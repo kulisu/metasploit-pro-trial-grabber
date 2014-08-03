@@ -19,7 +19,7 @@
     define( 'ENABLE_VERIFY', FALSE );
     define( 'REQUEST_DELAY', 15 );
     define( 'REQUEST_RETRY', 30 );
-    define( 'PROVIDER_LIST', serialize( array( 'Fakemailgenerator' => FALSE, 'Guerrillamail' => FALSE, 'Spambog' => TRUE, 'Yopmail' => TRUE ) ) );
+    define( 'PROVIDER_LIST', serialize( array( 'Fakemailgenerator' => FALSE, 'Guerrillamail' => FALSE, 'Spambog' => FALSE, 'Yopmail' => TRUE ) ) );
   echo "DONE !", PHP_EOL;
   # End
 
@@ -49,9 +49,10 @@
 
   # Start: choosing a valid domain and generating an email address
   echo "[+] choosing a valid domain and generating an email address .. ";
-    $total = count( $address['valid'] ) - 1;
+    # 
+    $total = count( $address['valid'] );
     if ( $total > 0 ) {
-      $fields['email'] = sprintf( '%s@%s', $fields['user_name'], $address['valid'][rand( 0, $total )]['value'] );
+      $fields['email'] = sprintf( '%s@%s', $fields['user_name'], $address['valid'][rand( 0, $total - 1 )]['value'] );
     } else {
       echo PHP_EOL, "[x] no valid domains, exiting ..", PHP_EOL;
       die();

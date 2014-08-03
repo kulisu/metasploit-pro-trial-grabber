@@ -10,7 +10,7 @@
    * 
    * @author Chris Lin <Chris#skiddie.me>
    * @link https://github.com/skiddie/metasploit-pro-trial-grabber
-   * @version 2014-07-25
+   * @version 2014-08-03
    */
 
   # Start: defining the pre-required constants
@@ -539,7 +539,7 @@
   class Metasploit extends Grabber {
     public function __construct() {
       parent::__construct();
-      $this->service_url = array( 'base_url' => 'https://forms.netsuite.com/app/site/hosting/scriptlet.nl', 'form_url' => 'http://www.rapid7.com/products/metasploit/metasploit-pro-registration-corelan.jsp' );
+      $this->service_url = array( 'base_url' => 'https://forms.netsuite.com/app/site/hosting/scriptlet.nl', 'form_url' => 'http://www.rapid7.com/products/metasploit/metasploit-pro-registration.jsp' );
     }
 
     public function __destruct() {

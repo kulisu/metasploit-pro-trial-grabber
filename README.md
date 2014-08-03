@@ -1,8 +1,10 @@
 # Metasploit Pro Trial Grabber
 
-##### Updated: using the new form to get the **[30-DAYS key]**, ENJOY it :)
+##### the 30-DAYS trial mentioned below has end now, change to use [14-DAYs trial form].
 
-##### This is a PHP command-line script to auto-grab the Metasploit's **[7-DAYs pro trial key]**.
+##### ~~Updated: using the new form to get the [30-DAYS key], ENJOY it :)~~
+
+##### This is a PHP command-line script to auto-grab the Metasploit's [7-DAYs pro trial key].
 
 Really tired to submit the trial request to Metasploit manually to get the pro key every weeks just because of its ~~[unfriendly price]~~ ?
 
@@ -160,7 +162,6 @@ C:\metasploit-pro-trial-grabber-master>C:\xampp\php\php.exe execute.php
 * [Random USERAGENT in CuRL and PHP]
 
 [7-DAYs pro trial key]:https://www.rapid7.com/register/metasploit-trial.jsp?product
-[30-DAYs pro trial key]:http://www.rapid7.com/products/metasploit/metasploit-pro-registration-corelan.jsp
 [unfriendly price]:https://community.rapid7.com/docs/DOC-2287
 [Fake Name Generator]:http://www.fakenamegenerator.com
 [Fake Mail Generator]:http://www.fakemailgenerator.com
@@ -172,3 +173,4 @@ C:\metasploit-pro-trial-grabber-master>C:\xampp\php\php.exe execute.php
 [Kali Linux]:http://www.kali.org/downloads
 [XAMPP]:http://downloads.sourceforge.net/project/xampp/XAMPP%20Windows/1.8.2/xampp-win32-1.8.2-5-VC9-installer.exe
 [30-DAYS key]:http://www.rapid7.com/products/metasploit/metasploit-pro-registration-corelan.jsp
+[14-DAYs trial form]:http://www.rapid7.com/products/metasploit/metasploit-pro-registration.jsp

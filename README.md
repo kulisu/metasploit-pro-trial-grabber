@@ -36,10 +36,16 @@ if you like this script, buy me a coffee ?
     * [cURL]: 7.26.0
     * [Kali Linux]: 1.0.8 x86
 
-* Windows
+* Windows:
 
-    * [XAMPP] 1.8.2
-    * [Windows] XP Professional Service Pack 3 x86
+    * [XAMPP]: 1.8.2
+    * Windows XP Professional Service Pack 3 x86
+
+* OS X:
+
+    * [PHP]: 5.5.14
+    * [cURL]: 7.37.1
+    * [OS X]: Yosemite 10.10
 
 ### Installation
 
@@ -55,11 +61,18 @@ root@kali-linux:~# cd metasploit-pro-trial-grabber && php composer.phar install
 root@kali-linux:~# apt-get install php5-curl
 ```
 
-* Windows
+* Windows:
 
 ```batch
 # download the script and unzip it by yourself, path `C:\` for example.
 C:\Documents and Settings\Chris>cd C:\metasploit-pro-trial-grabber-master && C:\xampp\php\php.exe composer.phar install
+```
+
+* OS X:
+
+```sh
+Chris-MBPR:~ Chris$ git clone https://github.com/skiddie/metasploit-pro-trial-grabber.git
+Chris-MBPR:~ Chris$ cd metasploit-pro-trial-grabber && php composer.phar install
 ```
 
 ### Execution
@@ -71,10 +84,16 @@ C:\Documents and Settings\Chris>cd C:\metasploit-pro-trial-grabber-master && C:\
 root@kali-linux:~# php execute.php
 ```
 
-* Windows
+* Windows:
 
 ```batch
 C:\metasploit-pro-trial-grabber-master>C:\xampp\php\php.exe execute.php
+```
+
+* OS X:
+
+```sh
+Chris-MBPR:~ Chris$ php execute.php
 ```
 
 ### Output
@@ -174,3 +193,4 @@ C:\metasploit-pro-trial-grabber-master>C:\xampp\php\php.exe execute.php
 [XAMPP]:http://downloads.sourceforge.net/project/xampp/XAMPP%20Windows/1.8.2/xampp-win32-1.8.2-5-VC9-installer.exe
 [30-DAYS key]:http://www.rapid7.com/products/metasploit/metasploit-pro-registration-corelan.jsp
 [14-DAYs trial form]:http://www.rapid7.com/products/metasploit/metasploit-pro-registration.jsp
+[OS X]:http://www.apple.com/osx/

@@ -1,6 +1,6 @@
 <?php
   /**
-   * This is a PHP command-line script to auto-grab the Metasploit's 7-DAYs pro trial key.
+   * This is a PHP command-line script to auto-grab the Metasploit's 14-DAYs pro trial key.
    * 
    * Really tired to submit the trial request to Metasploit manually to get the pro key every weeks just because of its unfriendly price ?
    * You have a new choice today !
@@ -10,7 +10,7 @@
    * 
    * @author Chris Lin <Chris#skiddie.me>
    * @link https://github.com/skiddie/metasploit-pro-trial-grabber
-   * @version 2014-08-03
+   * @version 2014-11-03
    */
 
   # Start: defining the pre-required constants
@@ -19,7 +19,9 @@
     define( 'ENABLE_VERIFY', FALSE );
     define( 'REQUEST_DELAY', 15 );
     define( 'REQUEST_RETRY', 30 );
-    define( 'PROVIDER_LIST', serialize( array( 'Fakemailgenerator' => FALSE, 'Guerrillamail' => FALSE, 'Spambog' => FALSE, 'Yopmail' => TRUE ) ) );
+    define( 'PROVIDER_LIST', serialize( array( 'Fakemailgenerator' => FALSE, 'Guerrillamail' => FALSE, 'Spambog' => TRUE, 'Yopmail' => TRUE ) ) );
+    # fixed `Warning: strtotime(): It is not safe to rely on the system's timezone settings. balabalabala` LOL
+    date_default_timezone_set( 'Asia/Taipei' );
   echo "DONE !", PHP_EOL;
   # End
 
@@ -192,7 +194,7 @@
   	 * @link http://www.fakemailgenerator.com/inbox/fleckens.hu/ceshounce1986/
   	 * @param string $email a mail address parsed from fakemailgenerator to receive the trial license
   	 * @param int $delay waiting for %d seconds to get again if the trial info has not delivered
-  	 * @return string the metasploit pro trial product key for 7-days
+  	 * @return string the metasploit pro trial product key for 14-days
   	 * @version 2014-03-29
   	 */
     public function get_trial_license( $email, $delay = 45 ) {
@@ -246,8 +248,8 @@
       echo "[+] ALL DONE !", PHP_EOL, PHP_EOL;
       # End
 
-      # return the 7-DAYS pro serial we want, DONE !
-      $this->return_result = sprintf( 'Your 7-days pro trial key: %s', $license[0] );
+      # return the 14-DAYS pro serial we want, DONE !
+      $this->return_result = sprintf( 'Your 14-days pro trial key: %s', $license[0] );
       return $this->return_result;
     }
   }
@@ -348,7 +350,7 @@
   	 * @author Chris Lin <Chris#skiddie.me>
   	 * @param string $email a mail address parsed from guerrillamail to receive the trial license
   	 * @param int $delay waiting for %d seconds to get again if the trial info has not delivered
-  	 * @return string the metasploit pro trial product key for 7-days
+  	 * @return string the metasploit pro trial product key for 14-days
   	 * @version 2014-03-22
   	 */
     public function get_trial_license( $email, $delay = 45 ) {
@@ -364,7 +366,7 @@
   class Spambog extends Disposable {
     public function __construct() {
       parent::__construct();
-      $this->service_url = 'http://www.spambog.com';
+      $this->service_url = 'http://discard.email';
     }
 
     public function __destruct() {
@@ -375,22 +377,25 @@
   	 * parsing the spambog mail content to get all available domains
   	 *
   	 * @author Chris Lin <Chris#skiddie.me>
-  	 * @link http://www.spambog.com/
+  	 * @link http://discard.email/
   	 * @return array returns an array of all the available mail domains
   	 * @version 2014-03-22
   	 */
     public function get_available_domains() {
-      return parent::get_available_domains();
+      $domains = array_filter( parent::get_available_domains( 'select[id=LoginDomainId] option[!class]' ) );
+      array_pop( $domains );
+      
+      return $domains;
     }
 
   	/**
   	 * parsing the spambog mail content to get the trial license in looping
   	 *
   	 * @author Chris Lin <Chris#skiddie.me>
-  	 * @link http://www.spambog.com/rss/upind1981@bund.us
+  	 * @link http://discard.email/rss/olde1972@pfui.ru
   	 * @param string $email a mail address parsed from spambog to receive the trial license
   	 * @param int $delay waiting for %d seconds to get again if the trial info has not delivered
-  	 * @return string the metasploit pro trial product key for 7-days
+  	 * @return string the metasploit pro trial product key for 14-days
   	 * @version 2014-03-29
   	 */
     public function get_trial_license( $email, $delay = 45 ) {
@@ -406,7 +411,7 @@
             # ready to parse some fields we're interested
             $this->sxml_object = new SimpleXMLElement( $this->curl_object->response );
 
-            # <link>http://www.spambog.com/message-48975819-7a3bd25f97097ab7f4edff5ef58e2bc2-1394838000/upind1981@bund.us.htm</link>
+            # <link>http://discard.email/message-5934749185473057024-43e1348b0062c9329bfd0d0c232c1f88/olde1972@pfui.ru.htm</link>
             $content = $this->sxml_object->channel->item->link;
 
             if ( empty( $content ) ) {
@@ -417,16 +422,22 @@
             } else {
               # BINGO !
               echo "      [*] BINGO ! the mail just delivered, parsing it .. ";
-                # http://www.spambog.com/message-48975819-7a3bd25f97097ab7f4edff5ef58e2bc2-1394838000/upind1981@bund.us.htm
-                preg_match( '/\w{8}-\w{32}-\w{10}/', $content, $url );
-                # cookies of sid: 6e4mapj8tp7oc80j49vnb64oe7
+                # http://discard.email/message-5934749185473057024-43e1348b0062c9329bfd0d0c232c1f88/olde1972@pfui.ru.htm
+                preg_match( '/\w{19}-\w{32}/', $content, $url );
+                # cookies of sid: ikb4qcla4g6dpoggg0cctadnn6
                 preg_match( '/\w{26}/', implode('|', $this->curl_object->response_headers), $cookies );
 
                 $this->curl_object->setCookie( 'sid', $cookies[0] );
-                # http://www.spambog.com/getHTMLVersion-48975819-7a3bd25f97097ab7f4edff5ef58e2bc2-1394838000.htm
-                $this->curl_object->get( sprintf( '%s/getHTMLVersion-%s.htm', $this->service_url, $url[0] ) );
 
+                # Start: must make the normal queries so that the we can grab the result below LOL
+                $this->curl_object->get( $content );
+                $this->curl_object->get( sprintf( '%s/message-%s.htm', $this->service_url, $url[0] ) );
+                # End
+
+                # http://discard.email/public/messages/getHtmlMessage.php?file=htmlMessage-5934749185473057024-43e1348b0062c9329bfd0d0c232c1f88_UTF-8.htm
+                $this->curl_object->get( sprintf( '%s/public/messages/getHtmlMessage.php?file=htmlMessage-%s_UTF-8.htm', $this->service_url, $url[0] ) );
                 $this->html_object->load( $this->curl_object->response );
+
                 # parsing the trial serial
                 preg_match( '/\w{4}-\w{4}-\w{4}-\w{4}/', $this->html_object->find( 'table tr td span', 0 )->parent()->plaintext, $license );
               echo "DONE !";
@@ -440,8 +451,8 @@
       echo "[+] ALL DONE !", PHP_EOL, PHP_EOL;
       # End
 
-      # return the 7-DAYS pro serial we want, DONE !
-      $this->return_result = sprintf( 'Your 7-days pro trial key: %s', $license[0] );
+      # return the 14-DAYS pro serial we want, DONE !
+      $this->return_result = sprintf( 'Your 14-days pro trial key: %s', $license[0] );
       return $this->return_result;
     }
   }
@@ -479,7 +490,7 @@
   	 * @link http://www.yopmail.com/en/rss.php?login=outramer
   	 * @param string $email a mail address parsed from spambog to receive the trial license
   	 * @param int $delay waiting for %d seconds to get again if the trial info has not delivered
-  	 * @return string the metasploit pro trial product key for 7-days
+  	 * @return string the metasploit pro trial product key for 14-days
   	 * @version 2014-03-29
   	 */
     public function get_trial_license( $email, $delay = 45 ) {
@@ -527,8 +538,8 @@
       echo "[+] ALL DONE !", PHP_EOL, PHP_EOL;
       # End
 
-      # return the 7-DAYS pro serial we want, DONE !
-      $this->return_result = sprintf( 'Your 7-days pro trial key: %s', $license[0] );
+      # return the 14-DAYS pro serial we want, DONE !
+      $this->return_result = sprintf( 'Your 14-days pro trial key: %s', $license[0] );
       return $this->return_result;
     }
   }

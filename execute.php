@@ -8,9 +8,9 @@
    * It's using Fake Name Generator and Fake Mail Generator to fetch the contact information to register, all are fake and disposable.
    * All the register processes are in automation, so enjoy it now !
    * 
-   * @author Chris Lin <Chris#skiddie.me>
+   * @author Chris Lin
    * @link https://github.com/skiddie/metasploit-pro-trial-grabber
-   * @version 2014-11-03
+   * @version 2014-11-30
    */
 
   # Start: defining the pre-required constants
@@ -82,7 +82,7 @@
   echo PHP_EOL, "Paypal: Chris#skiddie.me, BitCoin: 1BBJgGhyFMJcwnzCVZz2LxM2htsQBy9nWd", PHP_EOL;
 
   /**
-   * @author Chris Lin <Chris#skiddie.me>
+   * @author Chris Lin
    * @version 2014-03-22
    */
   abstract class Grabber {
@@ -125,8 +125,8 @@
   }
 
   /**
-   * @author Chris Lin <Chris#skiddie.me>
-   * @version 2014-03-22
+   * @author Chris Lin
+   * @version 2014-11-30
    */
   abstract class Disposable extends Grabber {
     protected function __construct() {
@@ -148,7 +148,7 @@
       # Start: parsing all the available domains from response
       echo "  [-] parsing all the available domains from response .. ";
         foreach ( $this->html_object->find( $pattern ) as $domain ) {
-          array_push( $domains, array( 'key' => $domain->value, 'value' => str_replace( array( '@', ' (PW)', '&#64;' ), '', $domain->plaintext ) ) );
+          array_push( $domains, array( 'key' => $domain->value, 'value' => trim( str_replace( array( '@', ' (PW)', '&#64;' ), '', $domain->plaintext ) ) ) );
         }
       echo "DONE !", PHP_EOL;
       # End
@@ -162,7 +162,7 @@
   }
 
   /**
-   * @author Chris Lin <Chris#skiddie.me>
+   * @author Chris Lin
    * @version 2014-03-29
    */
   class Fakemailgenerator extends Disposable {
@@ -178,7 +178,7 @@
   	/**
   	 * parsing the fakemailgenerator mail content to get all available domains
   	 *
-  	 * @author Chris Lin <Chris#skiddie.me>
+  	 * @author Chris Lin
   	 * @link http://www.fakemailgenerator.com/
   	 * @return array returns an array of all the available mail domains
   	 * @version 2014-03-22
@@ -190,7 +190,7 @@
   	/**
   	 * parsing the fakemailgenerator mail content to get the trial license in looping
   	 *
-  	 * @author Chris Lin <Chris#skiddie.me>
+  	 * @author Chris Lin
   	 * @link http://www.fakemailgenerator.com/inbox/fleckens.hu/ceshounce1986/
   	 * @param string $email a mail address parsed from fakemailgenerator to receive the trial license
   	 * @param int $delay waiting for %d seconds to get again if the trial info has not delivered
@@ -255,7 +255,7 @@
   }
 
   /** 
-   * @author Chris Lin <Chris#skiddie.me>
+   * @author Chris Lin
    * @version 2014-03-22
    */
   class Fakenamegenerator extends Grabber {
@@ -271,7 +271,7 @@
     /**
      * parsing the fakenamegenerator profile content to get the fake fields likes name, phone, etc.
      * 
-     * @author Chris Lin <Chris#skiddie.me>
+     * @author Chris Lin
      * @link http://www.fakenamegenerator.com/advanced.php?t=country&n[]=us&c[]=us&gen=85&age-min=19&age-max=45
      * @return array returns an array of fake profile fields
      * @version 2014-02-23
@@ -319,7 +319,7 @@
   }
 
   /**
-   * @author Chris Lin <Chris#skiddie.me>
+   * @author Chris Lin
    * @version 2014-03-22
    */
   class Guerrillamail extends Disposable {
@@ -335,7 +335,7 @@
   	/**
   	 * parsing the guerrillamail mail content to get all available domains
   	 *
-  	 * @author Chris Lin <Chris#skiddie.me>
+  	 * @author Chris Lin
   	 * @link https://www.guerrillamail.com/
   	 * @return array returns an array of all the available mail domains
   	 * @version 2014-03-22
@@ -347,7 +347,7 @@
   	/**
   	 * parsing the guerrillamail mail content to get the trial license in looping
   	 *
-  	 * @author Chris Lin <Chris#skiddie.me>
+  	 * @author Chris Lin
   	 * @param string $email a mail address parsed from guerrillamail to receive the trial license
   	 * @param int $delay waiting for %d seconds to get again if the trial info has not delivered
   	 * @return string the metasploit pro trial product key for 14-days
@@ -360,8 +360,8 @@
   }
 
   /**
-   * @author Chris Lin <Chris#skiddie.me>
-   * @version 2014-03-29
+   * @author Chris Lin
+   * @version 2014-11-03
    */
   class Spambog extends Disposable {
     public function __construct() {
@@ -376,7 +376,7 @@
   	/**
   	 * parsing the spambog mail content to get all available domains
   	 *
-  	 * @author Chris Lin <Chris#skiddie.me>
+  	 * @author Chris Lin
   	 * @link http://discard.email/
   	 * @return array returns an array of all the available mail domains
   	 * @version 2014-03-22
@@ -391,7 +391,7 @@
   	/**
   	 * parsing the spambog mail content to get the trial license in looping
   	 *
-  	 * @author Chris Lin <Chris#skiddie.me>
+  	 * @author Chris Lin
   	 * @link http://discard.email/rss/olde1972@pfui.ru
   	 * @param string $email a mail address parsed from spambog to receive the trial license
   	 * @param int $delay waiting for %d seconds to get again if the trial info has not delivered
@@ -458,7 +458,7 @@
   }
 
   /**
-   * @author Chris Lin <Chris#skiddie.me>
+   * @author Chris Lin
    * @version 2014-03-29
    */
   class Yopmail extends Disposable {
@@ -474,7 +474,7 @@
   	/**
   	 * parsing the yopmail mail content to get all available domains
   	 *
-  	 * @author Chris Lin <Chris#skiddie.me>
+  	 * @author Chris Lin
   	 * @link http://www.yopmail.com/
   	 * @return array returns an array of all the available mail domains
   	 * @version 2014-03-22
@@ -486,7 +486,7 @@
   	/**
   	 * parsing the yopmail mail content to get the trial license in looping
   	 *
-  	 * @author Chris Lin <Chris#skiddie.me>
+  	 * @author Chris Lin
   	 * @link http://www.yopmail.com/en/rss.php?login=outramer
   	 * @param string $email a mail address parsed from spambog to receive the trial license
   	 * @param int $delay waiting for %d seconds to get again if the trial info has not delivered
@@ -545,8 +545,8 @@
   }
 
   /**
-   * @author Chris Lin <Chris#skiddie.me>
-   * @version 2014-03-22
+   * @author Chris Lin
+   * @version 2014-11-30
    */
   class Metasploit extends Grabber {
     public function __construct() {
@@ -561,16 +561,16 @@
     /**
      * checking which the mail domains are valid from metasploit validation
      *
-     * @author Chris Lin <Chris#skiddie.me>
+     * @author Chris Lin
      * @link https://forms.netsuite.com/app/site/hosting/scriptlet.nl?script=177&deploy=1&compid=663271&h=5c107be29a3fe5ef6392&vd=emdf+eme+ips&ips=167.216.129.23&em=perat8678@teleworm.us
      * @param string $name a user name to prepend to mail domain
      * @param array $domains an array of all the available mail domains to be extracted
      * @return array return an array of the valid and illegal check result
-     * @version 2014-02-16
+     * @version 2014-11-30
      */
     public function check_mail_address( $name, $domains ) {
       $illegal  = array();
-      $pattern  = 'emdf:true';
+      $pattern  = 'ips:true,eme:true,emdf:true';
       $valid    = array();
 
       # Start: extracting from all the available domains
@@ -611,13 +611,12 @@
     /**
      * parsing the hidden filds' value from metasploit registration form
      *
-     * @author Chris Lin <Chris#skiddie.me>
+     * @author Chris Lin
      * @link https://www.rapid7.com/register/metasploit-trial.jsp?product
      * @return array return an array of the hidden filds' value
-     * @version 2014-02-16
+     * @version 2014-11-30
      */
     public function get_hidden_values() {
-      #$keys   = array( 'custparamleadsource', 'custparamreturnpath', 'custparamproductaxscode' );
       $values = array();
 
       # sending the GET request to retrieve the HTML raw code
@@ -627,7 +626,7 @@
 
       # Start: parsing the hidden filds' value from response
       echo "  [-] parsing the hidden filds' value from response ..";
-        foreach ( $this->html_object->find( 'input[type=hidden]') as $hidden ) {
+        foreach ( $this->html_object->find( 'form[id=submitForm] input[type=hidden]') as $hidden ) {
           $key   = $hidden->name;
           $value = $hidden->value;
           $values[$key] = $value;
@@ -648,42 +647,36 @@
     /**
      * submitting the trial request to the registration form
      *
-     * @author Chris Lin <Chris#skiddie.me>
+     * @author Chris Lin
      * @link https://forms.netsuite.com/app/site/hosting/scriptlet.nl?script=214&deploy=1&compid=663271&h=f545d011e89bdd812fe1
      * @param array $profile the applicant's contact information
      * @param array $hidden the hidden fields in this form
-     * @version 2014-02-23
+     * @version 2014-11-30
      */
-    public function submit_trial_request( $profile, $hidden = NULL ) {
+    public function submit_trial_request( $profile, $hidden ) {
       echo "  [-] preparing the registration payload .. ";
         $payload = array(
           # maybe there will have a captcha validation in the future ? handle it by yourself !
           # reference: http://www.dama2.com/
-          # 'custparamcaptcha'		=> '',
-          'custparamfirstname'      => $profile['first_name'],
-          'custparamlastname'       => $profile['last_name'],
-          'custparamtitle'          => $profile['title'],
-          'custparamcompanyname'    => $profile['company_name'],
-          'custparamcountry'        => 'TW',
-          'custparamstate'          => 0,
-          'custparamuse'            => 'Personal',
-          'custparamphone'          => $profile['phone'],
-          'custparamemail'          => $profile['email'],
-          'custparamleadsource'     => ( empty( $hidden['custparamleadsource'] ) ) ? 443597 : $hidden['custparamleadsource'],
-          'submitted'               => ( empty( $hidden['submitted'] ) ) ? '' : $hidden['submitted'],
-          'custparamreturnpath'     => ( empty( $hidden['custparamreturnpath'] ) ) ? 'https://localhost:3790/setup/activation' : $hidden['custparamreturnpath'],
-          'custparamproduct_key'    => ( empty( $hidden['custparamproduct_key'] ) ) ? '' : $hidden['custparamproduct_key'],
-          'custparamproductaxscode' => ( empty( $hidden['custparamproductaxscode'] ) ) ? 'msY5CIoVGr' : $hidden['custparamproductaxscode'],
-          'custparamthisIP'         => long2ip( rand( 0, 255 * 255 ) * rand( 0, 255 * 255 ) ),
-          'formSubmit'              => 'Get Free Trial'
+          # 'custparamcaptcha'   => '',
+          'custparamfirstname'   => $profile['first_name'],
+          'custparamlastname'    => $profile['last_name'],
+          'custparamtitle'       => $profile['title'],
+          'joblevel'             => 'Other',
+          'custparamcompanyname' => $profile['company_name'],
+          'custparamcountry'     => 'TW',
+          'typeofuse'            => 'Personal',
+          'custparamphone'       => $profile['phone'],
+          'custparamemail'       => $profile['email'],
+          'custparamthisIP'      => long2ip( rand( 0, 255 * 255 ) * rand( 0, 255 * 255 ) )
         );
       echo "DONE !", PHP_EOL;
 
       # Start: sending the POST request to retrieve the HTML raw code
       echo "  [-] sending the registration data to online form .. ";
-        $this->curl_object->post( ( empty( $hidden ) ) ? 'https://forms.netsuite.com/app/site/hosting/scriptlet.nl?script=214&deploy=1&compid=663271&h=f545d011e89bdd812fe1' : $hidden['form_action'], http_build_query( $payload ) );
+        $address = array_pop( $hidden );
+        $this->curl_object->post( $address , http_build_query( array_merge( $hidden, $payload ) ) );
       echo "DONE !", PHP_EOL;
       # End
     }
   }
-?>

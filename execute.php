@@ -236,7 +236,7 @@
           	    $this->html_object->load( $this->curl_object->response );
 
           	    # parsing the trial serial
-          	    preg_match( '/\w{4}-\w{4}-\w{4}-\w{4}/', $this->html_object->find( 'table tr td table tr td span', 0 )->parent()->plaintext, $license );
+          	    preg_match( '/\w{4}-\w{4}-\w{4}-\w{4}/', $this->html_object->find( 'table tr td span', 0 )->parent()->plaintext, $license );
           	  echo "DONE !";
           	}
           } else {
@@ -439,7 +439,7 @@
                 $this->html_object->load( $this->curl_object->response );
 
                 # parsing the trial serial
-                preg_match( '/\w{4}-\w{4}-\w{4}-\w{4}/', $this->html_object->find( 'table tr td table tr td span', 0 )->parent()->plaintext, $license );
+                preg_match( '/\w{4}-\w{4}-\w{4}-\w{4}/', $this->html_object->find( 'table tr td span', 0 )->parent()->plaintext, $license );
               echo "DONE !";
             }
           } else {
@@ -526,7 +526,7 @@
                 $this->html_object->load( $this->curl_object->response );
 
                 # parsing the trial serial
-                preg_match( '/\w{4}-\w{4}-\w{4}-\w{4}/', $this->html_object->find( 'table tr td table tr td span', 0 )->parent()->plaintext, $license );
+                preg_match( '/\w{4}-\w{4}-\w{4}-\w{4}/', $this->html_object->find( 'table tr td span', 0 )->parent()->plaintext, $license );
               echo "DONE !";
             }
           } else {

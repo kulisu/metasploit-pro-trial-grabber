@@ -19,7 +19,7 @@
     define( 'ENABLE_VERIFY', FALSE );
     define( 'REQUEST_DELAY', 15 );
     define( 'REQUEST_RETRY', 30 );
-    define( 'PROVIDER_LIST', serialize( array( 'Fakemailgenerator' => FALSE, 'Guerrillamail' => FALSE, 'Spambog' => TRUE, 'Yopmail' => TRUE ) ) );
+    define( 'PROVIDER_LIST', serialize( array( 'Fakemailgenerator' => FALSE, 'Guerrillamail' => FALSE, 'Spambog' => TRUE, 'Yopmail' => FALSE ) ) );
     # fixed `Warning: strtotime(): It is not safe to rely on the system's timezone settings. balabalabala` LOL
     date_default_timezone_set( 'Asia/Taipei' );
   echo "DONE !", PHP_EOL;

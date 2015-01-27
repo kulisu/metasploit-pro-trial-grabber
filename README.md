@@ -1,10 +1,8 @@
 # Metasploit Pro Trial Grabber
 
-##### the 30-DAYS trial mentioned below has end now, change to use [14-DAYs trial form].
+##### THIS SCRIPT WONT WORK ANY MORE .. GOOGLE [RECAPTCHA](https://www.google.com/recaptcha/intro/index.html), THANK YOU
 
-##### ~~Updated: using the new form to get the [30-DAYS key], ENJOY it :)~~
-
-##### This is a PHP command-line script to auto-grab the Metasploit's [7-DAYs pro trial key].
+This is a PHP command-line script to auto-grab the Metasploit's [14-DAYs pro trial key].
 
 Really tired to submit the trial request to Metasploit manually to get the pro key every weeks just because of its ~~[unfriendly price]~~ ?
 

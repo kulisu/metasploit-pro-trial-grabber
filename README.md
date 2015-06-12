@@ -1,6 +1,10 @@
 # Metasploit Pro Trial Grabber
 
-##### THIS SCRIPT WONT WORK ANY MORE .. GOOGLE [RECAPTCHA](https://www.google.com/recaptcha/intro/index.html), THANK YOU
+### Attention
+
+THIS SCRIPT WONT WORK ANY MORE !
+
+### Introduction
 
 This is a PHP command-line script to auto-grab the Metasploit's [14-DAYs pro trial key].
 
@@ -51,7 +55,7 @@ if you like this script, buy me a coffee ?
 
 ```sh
 # clone the script by using git directly.
-root@kali-linux:~# git clone https://github.com/skiddie/metasploit-pro-trial-grabber.git
+root@kali-linux:~# git clone https://github.com/kulisu/metasploit-pro-trial-grabber.git
 # install the project dependencies
 root@kali-linux:~# cd metasploit-pro-trial-grabber && php composer.phar install
 
@@ -69,7 +73,7 @@ C:\Documents and Settings\Chris>cd C:\metasploit-pro-trial-grabber-master && C:\
 * OS X:
 
 ```sh
-Chris-MBPR:~ Chris$ git clone https://github.com/skiddie/metasploit-pro-trial-grabber.git
+Chris-MBPR:~ Chris$ git clone https://github.com/kulisu/metasploit-pro-trial-grabber.git
 Chris-MBPR:~ Chris$ cd metasploit-pro-trial-grabber && php composer.phar install
 ```
 
